@@ -55,6 +55,8 @@ import kotlinx.coroutines.withContext
 import splitties.views.bottomPadding
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
+import android.content.Intent
+import io.legado.app.service.WebService
 
 /**
  * 主界面
@@ -111,6 +113,8 @@ class MainActivity : VMBaseActivity<ActivityMainBinding, MainViewModel>(),
                 }
             }
         }
+        val webServiceIntent = Intent(this, WebService::class.java)
+startService(webServiceIntent)
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
